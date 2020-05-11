@@ -1,8 +1,8 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
-let browser = null;
-let page = null;
+let browser;
+let page;
 
 /** list of methods to scrape site spys.one */
 const spys = {
