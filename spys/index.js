@@ -75,9 +75,9 @@ const spys = {
                 return listOfProxies;
             })
 
-            let jsonData = JSON.parse(fs.readFileSync('./spys/proxies.json', 'utf-8')); // read file with saved proxies
+            let jsonData = JSON.parse(fs.readFileSync('./media/proxies.json', 'utf-8')); // read file with saved proxies
             let newJsonData = [...jsonData, {country, proxies}];
-            fs.writeFileSync('./spys/proxies.json', JSON.stringify(newJsonData)); // write updated proxy list into file
+            fs.writeFileSync('./media/proxies.json', JSON.stringify(newJsonData)); // write updated proxy list into file
 
         }
     },
