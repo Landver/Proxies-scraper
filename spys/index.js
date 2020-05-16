@@ -67,7 +67,7 @@ const spys = {
                     const checkDate = row.children[8].innerText;
 
                     listOfProxies.push({
-                        addressAndPort, proxyType, anonymity, countryCityRegion, 
+                        addressAndPort, proxyType, anonymity, countryCityRegion,
                         hostnameOrganization, latency, speed, uptime, checkDate
                     })
                 };
@@ -76,7 +76,7 @@ const spys = {
             })
 
             let jsonData = JSON.parse(fs.readFileSync('./media/proxies.json', 'utf-8')); // read file with saved proxies
-            let newJsonData = [...jsonData, {country, proxies}];
+            let newJsonData = [...jsonData, { country, proxies }];
             fs.writeFileSync('./media/proxies.json', JSON.stringify(newJsonData)); // write updated proxy list into file
 
         }
