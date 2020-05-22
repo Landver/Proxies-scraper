@@ -75,7 +75,10 @@ const spys = {
                 return listOfProxies;
             })
 
-            let jsonData = JSON.parse(fs.readFileSync('./media/proxies.json', 'utf-8')); // read file with saved proxies
+            let jsonData = []
+            try { jsonData = JSON.parse(fs.readFileSync('./media/proxies.json', 'utf-8')) } // read file with saved proxies
+            catch (err) { fs.writeFileSync('./media/proxies.json', JSON.stringify(jsonData)) } // create new file if there the one doesn't exist
+
             let newJsonData = [...jsonData, { country, proxies }];
             fs.writeFileSync('./media/proxies.json', JSON.stringify(newJsonData)); // write updated proxy list into file
 
